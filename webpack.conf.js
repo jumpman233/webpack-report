@@ -11,7 +11,7 @@ const config = {
     output: {
         path: path.resolve('./dist'),
         filename:'[name].js',
-        // chunkFilename: '[name].[chunkhash].js'
+        chunkFilename: '[name].js'
     },
     optimization: {
         // namedChunks: true,
@@ -43,10 +43,6 @@ const config = {
                 return chunk.name
             }
             // console.log(chunk)
-        }),
-        new webpack.NamedModulesPlugin(module => {
-            console.log(module.name)
-            console.log(module)
         })
     ]
 }
